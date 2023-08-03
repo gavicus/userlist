@@ -7,7 +7,7 @@ export interface User {
     [key: string]: string | number | boolean;
 }
 
-const TEST_USERS: User[] = [
+export const TEST_USERS: User[] = [
     {
         avatar_url: "https://avatars.githubusercontent.com/u/1?v=4",
         events_url: "https://api.github.com/users/mojombo/events{/privacy}",
@@ -89,7 +89,7 @@ export interface Repo {
     html_url: string;
     [key: string]: string | number | boolean | object | null;
 }
-const TEST_REPOS: Repo[] = [
+export const TEST_REPOS: Repo[] = [
     {
         allow_forking: true,
         archive_url: "https://api.github.com/repos/defunkt/ace/{archive_format}{/ref}",
@@ -189,7 +189,7 @@ export interface Organization {
     avatar_url: string;
     [key: string]: string | number;
 }
-const TEST_ORGS: Organization[] = [
+export const TEST_ORGS: Organization[] = [
     {
         avatar_url: "https://avatars.githubusercontent.com/u/197655?v=4",
         description: "Logic-less templates.",
