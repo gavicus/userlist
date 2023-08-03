@@ -1,6 +1,7 @@
 .ud-main {
     padding: 1rem;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     background-color: var(--main-bg-color);
     display: flex;
     flex: 1;
@@ -31,15 +32,6 @@
     }
 }
 
-.ud-panel {
-    background-color: var(--panel-color);
-    border-radius: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
 .ud-user-panel {
     margin-top: 4rem;
     align-items: flex-start;
@@ -57,26 +49,4 @@
 .ud-login {
     align-self: flex-end;
     font-size: 2rem;
-}
-
-.ud-small-listing {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    text-decoration: none;
-}
-
-.ud-mini-avatar {
-    max-width: 1.5rem;
-    border-radius: 50%;
-}
-
-.ud-listing-name, .ud-listing-name:link, .ud-listing-name:visited {
-    font-size: 1.2rem;
-    color: var(--link-color);    
-}
-
-.ud-listing-description {
-    font-style: italic;
-    font-size: 1rem;
 }

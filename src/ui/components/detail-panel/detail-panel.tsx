@@ -15,7 +15,7 @@ interface DetailPanelAttrs {
 
 function DetailPanel({title, entries}: DetailPanelAttrs) {
     return (
-        <div className="ud-panel">
+        <div className="info-panel">
             { title && <div>{title}</div> }
             { entries && 
                 entries.map(e => (
@@ -32,7 +32,7 @@ function DetailPanel({title, entries}: DetailPanelAttrs) {
 function EntryLine({entry}: {entry: ListEntry}) {
     return (
         <>
-            { entry.image && <img className="ud-mini-avatar" src={entry.image} /> }
+            { entry.image && <img className="ud-mini-avatar" src={entry.image} alt="small avatar" /> }
             <div className="ud-listing-name">
                 {entry.name}
             </div>

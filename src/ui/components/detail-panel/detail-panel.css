@@ -1,0 +1,22 @@
+
+.ud-small-listing {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-decoration: none;
+}
+
+.ud-mini-avatar {
+    max-width: 1.5rem;
+    border-radius: 50%;
+}
+
+.ud-listing-name, .ud-listing-name:link, .ud-listing-name:visited {
+    font-size: 1.2rem;
+    color: var(--link-color);    
+}
+
+.ud-listing-description {
+    font-style: italic;
+    font-size: 1rem;
+}

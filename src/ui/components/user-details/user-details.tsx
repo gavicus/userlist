@@ -15,12 +15,12 @@ function UserDetails({user, organizations, followers, repos}: UserDetailsAttrs) 
         <div className="ud-main">
             <div className="ud-column ud-left-column">
                 { user &&
-                    <div className="ud-panel ud-user-panel">
-                        <img src={user.avatar_url} className="ud-avatar" />
+                    <div className="info-panel ud-user-panel">
+                        <img src={user.avatar_url} className="ud-avatar" alt="large avatar" />
                         <div className="ud-login">{user.login}</div>
                     </div>
                 }
-                
+
                 <DetailPanel
                     title="Organizations"
                     entries={organizations?.map(org => ({
@@ -32,7 +32,7 @@ function UserDetails({user, organizations, followers, repos}: UserDetailsAttrs) 
 
                 <DetailPanel
                     title={`Followers: ${followers?.length}`}
-                    entries={followers?.map(f => ({
+                    entries={followers?.slice(0,5).map(f => ({
                         name: f.login,
                         image: f.avatar_url
                     }))}

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import UserDetails from "./user-details";
-import { TEST_ORGS, TEST_REPOS, TEST_USERS } from "utils/api";
+import { TEST_ORGS, TEST_REPOS, TEST_USERS } from "utils/test-data";
 
 describe("user details", () => {
     test("component shows user", () => {
