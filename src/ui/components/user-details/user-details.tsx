@@ -1,4 +1,5 @@
 import { Organization, Repo, User } from "utils/api";
+import DetailPanel from "ui/components/detail-panel/detail-panel";
 
 import "./user-details.css";
 
@@ -19,48 +20,35 @@ function UserDetails({user, organizations, followers, repos}: UserDetailsAttrs) 
                         <div className="ud-login">{user.login}</div>
                     </div>
                 }
-                { organizations &&
-                    <div className="ud-panel">
-                        <div>Organizations</div>
-                        { organizations.map(org => (
-                            <div key={org.url} className="ud-small-listing">
-                                <img className="ud-mini-avatar" src={org.avatar_url} />
-                                <div className="ud-listing-name">
-                                    {org.login}
-                                </div>
-                                <div className="ud-listing-description">{org.description}</div>
-                            </div>
-                        )) }
-                    </div>
-                }
-                { followers &&
-                    <div className="ud-panel">
-                        <div>Followers</div>
-                        { followers.map(follower => (
-                            <div key={follower.login} className="ud-small-listing">
-                                <img className="ud-mini-avatar" src={follower.avatar_url} />
-                                <div className="ud-listing-name">
-                                    {follower.login}
-                                </div>
-                            </div>
-                        )) }
-                    </div>
-                }
+                
+                <DetailPanel
+                    title="Organizations"
+                    entries={organizations?.map(org => ({
+                        name: org.login,
+                        image: org.avatar_url,
+                        description: org.description
+                    }))}
+                />
+
+                <DetailPanel
+                    title={`Followers: ${followers?.length}`}
+                    entries={followers?.map(f => ({
+                        name: f.login,
+                        image: f.avatar_url
+                    }))}
+                />
             </div>
             <div className="ud-column ud-right-column">
-                { repos &&
-                    <div className="ud-panel">
-                        <div>GitHub repos</div>
-                        { repos.map(repo => (
-                            <a key={repo.url} className="ud-small-listing" href={repo.html_url}>
-                                <img className="ud-mini-avatar" src={repo.owner.avatar_url} />
-                                <div className="ud-listing-name">
-                                    {repo.owner.login}/{repo.name}
-                                </div>
-                            </a>
-                        )) }
-                    </div>
-                }
+                <DetailPanel
+                    title="GitHub repos"
+                    entries={
+                        repos?.map(r => ({
+                            name: `${r.owner.login}/${r.name}`,
+                            image: r.owner.avatar_url,
+                            link: r.html_url
+                        }))
+                    }
+                />
             </div>
         </div>
     );
