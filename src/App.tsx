@@ -17,6 +17,7 @@ function App() {
           <Route path="/user" element={<UserPage />} />
         </Routes>
       </BrowserRouter>
+      <div className="learn-react">learn react</div>
     </div>
   );
 }
